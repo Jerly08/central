@@ -33,7 +33,7 @@ export default NextAuth({
       },
     }),
   ],
-  secret: process.env.NEXTAUTH_SECRET, // Tambahkan baris ini
+  secret: process.env.NEXTAUTH_SECRET, // Pastikan ini sudah diatur di .env
   session: {
     strategy: "jwt", // Gunakan strategy untuk mengatur penggunaan JWT
   },
@@ -53,6 +53,6 @@ export default NextAuth({
   },
   pages: {
     signIn: "/auth/login",
-    newUser: "/auth/register", // Tambahkan ini
+    newUser: "/auth/register", // Halaman untuk pengguna baru
   },
 });

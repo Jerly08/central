@@ -1,5 +1,4 @@
 'use client';
-
 import React from 'react';
 import { signIn } from 'next-auth/react';
 // Hapus import useRouter jika tidak digunakan
@@ -24,6 +23,12 @@ export default function HomePage() {
               className="bg-blue-500 text-white p-2 rounded"
             >
               Masuk
+            </button>
+            <button
+              onClick={() => window.location.href = '/auth/register'}
+              className="bg-green-500 text-white p-2 rounded mt-4"
+            >
+              Daftar
             </button>
           </div>
         </main>
