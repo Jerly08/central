@@ -33,6 +33,7 @@ export default NextAuth({
       },
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET, // Tambahkan baris ini
   session: {
     strategy: "jwt", // Gunakan strategy untuk mengatur penggunaan JWT
   },
