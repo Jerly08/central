@@ -8,12 +8,6 @@ interface Company {
   token: string;
 }
 
-interface CompanyUser {
-  id: number;
-  username: string;
-  company_id: number;
-}
-
 interface ActivationKey {
   id: number;
   key: string;
@@ -24,7 +18,6 @@ interface ActivationKey {
 export default function DashboardPage() {
   const router = useRouter();
   const [companies, setCompanies] = useState<Company[]>([]);
-  const [companyUsers, setCompanyUsers] = useState<CompanyUser[]>([]);
   const [activationKeys, setActivationKeys] = useState<ActivationKey[]>([]);
   const [newAdminUsername, setNewAdminUsername] = useState("");
   const [newAdminPassword, setNewAdminPassword] = useState("");
@@ -37,10 +30,6 @@ export default function DashboardPage() {
         const resCompanies = await fetch("/api/companies");
         const dataCompanies: Company[] = await resCompanies.json();
         setCompanies(Array.isArray(dataCompanies) ? dataCompanies : []);
-
-        const resCompanyUsers = await fetch("/api/companyUsers");
-        const dataCompanyUsers: CompanyUser[] = await resCompanyUsers.json();
-        setCompanyUsers(Array.isArray(dataCompanyUsers) ? dataCompanyUsers : []);
 
         const resActivationKeys = await fetch("/api/activationKeys");
         const dataActivationKeys: ActivationKey[] = await resActivationKeys.json();

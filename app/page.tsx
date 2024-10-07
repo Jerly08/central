@@ -2,16 +2,18 @@
 
 import React from 'react';
 import { signIn } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+// Hapus import useRouter jika tidak digunakan
+// import { useRouter } from 'next/navigation';
 import SessionProviderWrapper from './SessionProviderWrapper';
 
 export default function HomePage() {
-  const router = useRouter();
+  // Hapus deklarasi router jika tidak digunakan
+  // const router = useRouter();
 
   return (
     <SessionProviderWrapper>
       <div className="min-h-screen bg-background text-foreground dark:bg-darkBackground dark:text-darkForeground">
-        <header className="p-4 bg-gray-200 dark:bg-gray-800 flex justify-center items-center">
+        <header className="p-4 bg-gray-200 dark:bg-gray-800 flex justify-start items-center">
           <h1 className="text-3xl font-bold">Selamat Datang di Central Ultra Queue</h1>
         </header>
         <main className="p-4">

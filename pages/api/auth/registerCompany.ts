@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
+import crypto from 'crypto'; // Ganti require dengan import
 
 const prisma = new PrismaClient();
 
@@ -36,5 +37,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 }
 
 function generateToken() {
-  return require('crypto').randomBytes(16).toString('hex');
+  return crypto.randomBytes(16).toString('hex'); // Gunakan import crypto
 }
